@@ -195,9 +195,6 @@ persist.vendor.lge.sar_fakestatus=off
 ro.soc.manufacturer=QTI
 ro.soc.model=SDM845
 
-# SSR
-persist.vendor.ssr.restart_level=ALL_ENABLE
-
 # USB
 persist.sys.usb.config.extra=none
 
