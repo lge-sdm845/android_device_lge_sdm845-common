@@ -877,16 +877,10 @@ system_ext/framework/audiosphere.jar
 vendor/lib/soundfx/libaisound.so
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/liblgeffectwrapper.so
-vendor/lib/soundfx/libqcbassboost.so
-vendor/lib/soundfx/libqcreverb.so
-vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so
 vendor/lib64/soundfx/libaisound.so
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/liblgeffectwrapper.so
-vendor/lib64/soundfx/libqcbassboost.so
-vendor/lib64/soundfx/libqcreverb.so
-vendor/lib64/soundfx/libqcvirt.so
 vendor/lib64/soundfx/libshoebox.so
 
 # Thermal
