@@ -483,6 +483,11 @@ on property:sys.boot_completed=1
     swapon_all /vendor/etc/fstab.${ro.hardware}
     write /proc/sys/vm/swappiness 100
 
+    # set default schedTune value for foreground/top-app
+    write /dev/stune/foreground/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.boost 5
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+
 on property:persist.vendor.radio.atfwd.start=false
     stop vendor.atfwd
 
