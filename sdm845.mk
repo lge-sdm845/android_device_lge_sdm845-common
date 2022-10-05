@@ -94,8 +94,7 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libvolumelistener \
     tinymix \
-    libtinycompress \
-    libtinycompress.vendor
+    libtinycompress
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
