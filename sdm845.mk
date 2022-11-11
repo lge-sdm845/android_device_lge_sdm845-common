@@ -84,7 +84,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.service \
     android.hardware.audio@6.0-impl \
-    android.hardware.soundtrigger@2.1-impl \
     android.hardware.bluetooth.audio-impl \
     libaudiopreprocessing \
     libbatterylistener \
@@ -104,6 +103,10 @@ PRODUCT_PACKAGES += \
     libvisualizer \
     libvolumelistener \
     tinymix
+
+PRODUCT_PACKAGES += \
+    android.hardware.soundtrigger@2.1-impl \
+    sound_trigger.primary.sdm845
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
