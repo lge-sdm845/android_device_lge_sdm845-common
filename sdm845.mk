@@ -96,6 +96,10 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     tinymix
 
+PRODUCT_PACKAGES += \
+    android.hardware.soundtrigger@2.2-impl \
+    sound_trigger.primary.sdm845 \
+
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
     $(COMMON_PATH)/configs/audio/audio_output_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_output_policy.conf \
