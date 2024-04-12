@@ -15,7 +15,7 @@
 #
 
 # Inherit proprietary blobs
-$(call inherit-product-if-exists, vendor/lge/sdm845-common/sdm845-common-vendor.mk)
+$(call inherit-product, vendor/lge/sdm845-common/sdm845-common-vendor.mk)
 
 # Common device tree path
 COMMON_PATH := device/lge/sdm845-common
