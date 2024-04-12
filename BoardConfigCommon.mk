@@ -206,5 +206,3 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
 -include vendor/lge/sdm845-common/BoardConfigVendor.mk
-
-
