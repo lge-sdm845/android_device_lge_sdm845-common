@@ -413,7 +413,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor \
     android.system.net.netd@1.1 \
     android.system.net.netd@1.1.vendor \
-    libprotobuf-cpp-full \
     librmnetctl \
     libxml2
 
