@@ -28,7 +28,6 @@
 /(vendor|system/vendor)/bin/ppd                                                                         u:object_r:hal_display_color_default_exec:s0
 /(vendor|system/vendor)/bin/qni                                                                         u:object_r:qni_exec:s0
 /(vendor|system/vendor)/bin/qrtr-lookup                                                                 u:object_r:qrtr_exec:s0
-/(vendor|system/vendor)/bin/wigig_wiburn                                                                u:object_r:wigig_wiburn_exec:s0
 
 # LG
 /mnt/vendor/absolute(/.*)?                              u:object_r:persdata_file:s0
