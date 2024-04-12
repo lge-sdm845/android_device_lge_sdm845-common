@@ -20,9 +20,6 @@ COMMON_PATH := device/lge/sdm845-common
 # define hardware platform
 PRODUCT_PLATFORM := sdm845
 
-PRODUCT_SOONG_NAMESPACES += \
-    $(COMMON_PATH)/bootctrl
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay \
