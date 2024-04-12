@@ -165,7 +165,6 @@ include device/qcom/sepolicy_vndr/SEPolicy.mk
 
 # Treble
 BOARD_VNDK_VERSION := current
-PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
