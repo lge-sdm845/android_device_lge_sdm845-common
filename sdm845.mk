@@ -17,9 +17,6 @@
 # Common device tree path
 COMMON_PATH := device/lge/sdm845-common
 
-# define hardware platform
-PRODUCT_PLATFORM := sdm845
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay \
