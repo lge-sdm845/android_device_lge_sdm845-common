@@ -1,17 +1,10 @@
 [
   {
-    "repository": "LineageOS/kernel_lge_msm8998",
-    "target_path": "kernel/lge/msm8998",
-    "branch": "lineage-16.0"
+    "repository": "android_hardware_lge",
+    "target_path": "hardware/lge"
   },
   {
-    "remote": "github",
-    "repository": "SGCMarkus/proprietary_vendor_lge",
-    "target_path": "vendor/lge",
-    "branch": "lineage-16.0"
-  },
-  {
-    "repository": "android_packages_resources_devicesettings",
-    "target_path": "packages/resources/devicesettings",
+    "repository": "android_kernel_lge_sdm845",
+    "target_path": "kernel/lge/sdm845"
   }
 ]
