@@ -177,7 +177,7 @@ persist.vendor.lge.sar_dependmode=on
 persist.vendor.lge.sar_fakestatus=off 
 
 # SoC
-ro.soc.manufacturer=Qualcomm
+ro.soc.manufacturer=QTI
 ro.soc.model=SDM845
 
 # SSR
