@@ -23,6 +23,9 @@ ro.charger.enable_suspend=true
 # CoreSight STM
 persist.debug.coresight.config=stm-events
 
+# Fastbootd
+ro.fastbootd.available=true
+
 #Netflix custom property
 ro.netflix.bsp_rev=Q845-05000-1
 
