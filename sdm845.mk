@@ -198,14 +198,10 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.lge_sdm845
 
 # FM packages
-#PRODUCT_PACKAGES += \
-#	libqcomfm_jni \
-#	android.hardware.broadcastradio@1.0-impl \
-#	FM2 \
-#	qcom.fmradio \
-#	qcom.fmradio.xml
-
-#PRODUCT_BOOT_JARS += qcom.fmradio
+PRODUCT_PACKAGES += \
+    FM2 \
+    libqcomfm_jni \
+    qcom.fmradio
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
