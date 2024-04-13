@@ -181,9 +181,6 @@
          The default is false. -->
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
 
-    <!-- If this is true, the screen will fade off. -->
-    <bool name="config_animateScreenLights">false</bool>
-
     <!-- ComponentName of a dream to show whenever the system would otherwise have
          gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
          try to start this dream if possible.  The dream should typically call startDozing()
