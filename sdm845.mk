@@ -153,6 +153,10 @@ PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0-impl.generic \
     android.hardware.contexthub@1.0-service
 
+# ConfigStore
+PRODUCT_PACKAGES += \
+    disable_configstore
+
 # DAC
 PRODUCT_PACKAGES += \
     QuadDACPanel \
