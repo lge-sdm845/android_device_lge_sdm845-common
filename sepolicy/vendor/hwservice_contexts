@@ -3,4 +3,3 @@ vendor.lge.hardware.biometrics.fingerprint::ILgeBiometricsFingerprint   u:object
 vendor.lge.hardware.radio::ILgeRadio                                    u:object_r:hal_telephony_hwservice:s0
 vendor.nxp.nxpnfc::INxpNfc                                              u:object_r:hal_nfc_hwservice:s0
 vendor.nxp.nxpnfc::INxpEse                                              u:object_r:hal_nfc_hwservice:s0
-vendor.qti.hardware.cvp::ICvp                                           u:object_r:hal_cvp_hwservice:s0
