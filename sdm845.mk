@@ -331,9 +331,6 @@ PRODUCT_PACKAGES += \
 
 # OMX
 PRODUCT_PACKAGES += \
-    libc2dcolorconvert \
-    libcodec2_hidl@1.0.vendor \
-    libcodec2_vndk.vendor \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
@@ -342,7 +339,13 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libOmxVidcCommon \
+    libavservices_minijail \
+    libavservices_minijail.vendor \
+    libc2dcolorconvert \
+    libcodec2_hidl@1.0.vendor \
+    libcodec2_vndk.vendor \
+    libmm-omxcore \
+    libstagefright_softomx.vendor \
     libstagefrighthw
 
 # Permissions
@@ -393,9 +396,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libjson \
     libqti_vndfwk_detect \
-    libqti_vndfwk_detect.vendor \
-    libavservices_minijail \
-    libavservices_minijail.vendor
+    libqti_vndfwk_detect.vendor
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/qmi_fw.conf:$(TARGET_COPY_OUT_VENDOR)/etc/qmi_fw.conf
