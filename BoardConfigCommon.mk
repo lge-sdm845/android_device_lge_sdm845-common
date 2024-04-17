@@ -83,9 +83,6 @@ TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
 TARGET_USES_DRM_PP := true
 
-# DRM
-TARGET_ENABLE_MEDIADRM_64 := true
-
 # Extended Filesystem Support
 TARGET_EXFAT_DRIVER := sdfat
 
