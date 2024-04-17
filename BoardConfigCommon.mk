@@ -76,7 +76,6 @@ BOARD_VENDOR := lge
 
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
-USE_CAMERA_STUB := true
 
 # Display
 TARGET_USES_GRALLOC1 := true
