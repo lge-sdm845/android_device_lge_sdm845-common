@@ -953,9 +953,6 @@ vendor/lib64/soundfx/libreverbwrapper.so
 vendor/lib64/soundfx/libshoebox.so
 vendor/lib64/soundfx/libvisualizer.so
 
-# Telephony common
--system_ext/framework/qti-telephony-common.jar
-
 # Thermal
 vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
