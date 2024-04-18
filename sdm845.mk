@@ -74,27 +74,36 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio@2.0-service \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.common@2.0-util \
-    android.hardware.audio.common@6.0-util \
-    android.hardware.audio.effect@2.0-impl \
+    audio.primary.sdm845 \
+    audio.primary.default \
+    audio.r_submix.default \
+    audio.bluetooth.default \
+    audio.usb.default
+
+PRODUCT_PACKAGES += \
     android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio.service \
+    android.hardware.audio@6.0-impl \
     android.hardware.soundtrigger@2.1-impl \
     android.hardware.bluetooth.audio@2.0-impl \
-    audio.r_submix.default \
-    audio.usb.default \
-    libaudio-resampler \
-    libaudioroute \
-    libhdmiedid \
+    libaudiopreprocessing \
+    libbatterylistener \
+    libbundlewrapper \
+    libcomprcapture \
+    libdownmix \
+    libdynproc \
+    libeffectproxy \
     libhfp \
+    libldnhncr \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
+    libreverbwrapper \
+    libsndmonitor \
+    libtinycompress \
+    libvisualizer \
     libvolumelistener \
-    tinymix \
-    libtinycompress
+    tinymix
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
@@ -128,7 +137,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0 \
     android.hardware.bluetooth@1.0.vendor \
-    audio.bluetooth.default \
     liba2dpoffload \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
