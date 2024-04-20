@@ -151,7 +151,6 @@ TARGET_USES_MKE2FS := true
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
-TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Sepolicy
 include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
