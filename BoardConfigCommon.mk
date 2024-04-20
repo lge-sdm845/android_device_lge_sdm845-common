@@ -73,9 +73,6 @@ BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
 # Board vendor
 BOARD_VENDOR := lge
 
-# Camera
-TARGET_USES_QTI_CAMERA_DEVICE := true
-
 # Display
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
