@@ -162,11 +162,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
-# DAC
-PRODUCT_PACKAGES += \
-    QuadDACPanel \
-    vendor.lge.hardware.audio.dac.control@1.0-service
-
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
