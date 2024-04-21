@@ -1,8 +1,5 @@
 # This file is imported by init.{ro.hardware}.rc
 
-# LGE logger service rc
-import /init.lge.log.rc
-
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
@@ -68,17 +65,6 @@ on post-fs
     # change permissions on ioninfo
     chown root log /proc/ioninfo
     chmod 0440 /proc/ioninfo
-
-on property:vold.decrypt=trigger_load_persist_props && property:ro.boot.vendor.lge.forced_log=enable
-    setprop ro.vendor.lge.forced_log enable
-
-on property:ro.vendor.lge.forced_log=enable
-    setprop persist.vendor.lge.service.crash.enable 1
-    setprop persist.vendor.lge.service.kernel.enable 5
-    setprop persist.vendor.lge.service.main.enable 5
-    setprop persist.vendor.lge.service.system.enable 5
-    setprop persist.vendor.lge.service.radio.enable 5
-    setprop persist.vendor.lge.service.events.enable 5
 
 # forced_usb_path_change
 service forced_usb_path_change /vendor/bin/init.lge.forced_usb_path_change.sh
