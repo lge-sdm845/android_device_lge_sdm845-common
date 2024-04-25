@@ -3,19 +3,19 @@ type op_file, file_type;
 type op_audio_file, file_type;
 
 # LG
-type persdata_file, file_type;
+type abt_pers_data_file, file_type;
 
 # Persist
-type persistlg_file, file_type;
-type persistlg_camera_file, file_type;
-type persistlg_data_file, file_type;
-type persistlg_drm_file, file_type;
-type persistlg_firmware_file, file_type;
-type persistlg_goodix_file, file_type;
-type persistlg_wlan_file, file_type;
+type qseesfs_data_file, file_type;
+type persist_lg_camera_file, file_type;
+type persist_lg_data_file, file_type;
+type persist_lg_fingerprint_file, file_type;
+type persist_lg_wlan_file, file_type;
+type widevine_data_file, file_type;
+type firmware_data_file, file_type;
 
 # Power
-type qni_power_file, file_type;
+type power_file, file_type;
 
 # Proc
 type proc_devices, proc_type, fs_type;
