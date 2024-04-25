@@ -8,8 +8,8 @@ allow qni sysfs_qnovo:file rw_file_perms;
 allow qni sysfs_battery_supply:dir { r_dir_perms search };
 allow qni sysfs_battery_supply:file rw_file_perms;
 
-allow qni qni_power_file:dir rw_dir_perms;
-allow qni qni_power_file:file rw_file_perms;
+allow qni power_file:dir rw_dir_perms;
+allow qni power_file:file rw_file_perms;
 
 allow qni kmsg_device:chr_file rw_file_perms;
 

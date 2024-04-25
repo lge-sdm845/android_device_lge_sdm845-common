@@ -26,7 +26,7 @@
 /(vendor|system/vendor)/bin/qrtr-lookup                                                                 u:object_r:qrtr_exec:s0
 
 # LG
-/mnt/vendor/absolute(/.*)?                              u:object_r:persdata_file:s0
+/mnt/vendor/absolute(/.*)?                              u:object_r:abt_pers_data_file:s0
 
 # OP files
 /oem/OP(/.*)?                                           u:object_r:op_file:s0
@@ -34,17 +34,17 @@
 
 # Persist files
 /mnt/vendor/persist(/.*)?                               u:object_r:persist_file:s0
-/mnt/vendor/persist-lg(/.*)?                            u:object_r:persistlg_file:s0
-/mnt/vendor/persist-lg/camera(/.*)?                     u:object_r:persistlg_camera_file:s0
-/mnt/vendor/persist-lg/data(/.*)?                       u:object_r:persistlg_data_file:s0
-/mnt/vendor/persist-lg/firmware(/.*)?                   u:object_r:persistlg_firmware_file:s0
-/mnt/vendor/persist-lg/goodix(/.*)?                     u:object_r:persistlg_goodix_file:s0
-/mnt/vendor/persist-lg/widevine(/.*)?                   u:object_r:persistlg_drm_file:s0
-/mnt/vendor/persist-lg/wifi(/.*)?                       u:object_r:persistlg_wlan_file:s0
-/mnt/vendor/persist-lg/wifi/qcom(/.*)?                  u:object_r:persistlg_wlan_file:s0
+/mnt/vendor/persist-lg(/.*)?                            u:object_r:persist_lg_data_file:s0
+/mnt/vendor/persist-lg/camera(/.*)?                     u:object_r:persist_lg_camera_file:s0
+/mnt/vendor/persist-lg/data(/.*)?                       u:object_r:qseesfs_data_file:s0
+/mnt/vendor/persist-lg/firmware(/.*)?                   u:object_r:firmware_data_file:s0
+/mnt/vendor/persist-lg/goodix(/.*)?                     u:object_r:persist_lg_fingerprint_file:s0
+/mnt/vendor/persist-lg/widevine(/.*)?                   u:object_r:widevine_data_file:s0
+/mnt/vendor/persist-lg/wifi(/.*)?                       u:object_r:persist_lg_wlan_file:s0
+/mnt/vendor/persist-lg/wifi/qcom(/.*)?                  u:object_r:persist_lg_wlan_file:s0
 
 # Power
-/mnt/vendor/power(/.*)?                                 u:object_r:qni_power_file:s0
+/mnt/vendor/power(/.*)?                                 u:object_r:power_file:s0
 
 # SNS
 /mnt/vendor/sns(/.*)?                                   u:object_r:sns_file:s0
