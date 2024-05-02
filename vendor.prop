@@ -49,6 +49,7 @@ vendor.lge.audio.hifi_rec.concert_gain=-140
 vendor.lge.audio.hifi_rec.concert_lcf=0
 vendor.lge.audio.hifi_rec.concert_lmt=0
 vendor.lge.audio.hifi_rec.offset_gain=39
+ro.hardware.audio_amplifier=hifi_dac
 
 # Audio - Features
 vendor.audio.feature.a2dp_offload.enable=true

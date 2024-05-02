@@ -74,8 +74,6 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.sdm845 \
-    audio.primary.default \
     audio.r_submix.default \
     audio.bluetooth.default \
     audio.usb.default
@@ -84,24 +82,20 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.service \
     android.hardware.audio@6.0-impl \
-    android.hardware.soundtrigger@2.1-impl \
     android.hardware.bluetooth.audio-impl \
-    libaudiopreprocessing \
+    audio.primary.sdm845 \
+    liba2dpoffload \
     libbatterylistener \
-    libbundlewrapper \
     libcomprcapture \
-    libdownmix \
-    libdynproc \
-    libeffectproxy \
+    libexthwplugin \
+    libhdmiedid \
     libhfp \
-    libldnhncr \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libreverbwrapper \
     libsndmonitor \
+    libspkrprot \
     libtinycompress \
-    libvisualizer \
     libvolumelistener \
     tinymix
 
@@ -118,8 +112,7 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/listen_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/listen_platform_info.xml \
     $(COMMON_PATH)/configs/audio/mixer_paths_i2s.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_i2s.xml \
     $(COMMON_PATH)/configs/audio/mixer_paths_qvr.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_qvr.xml \
-    $(COMMON_PATH)/configs/audio/mixer_paths_skuk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_skuk.xml \
-    $(COMMON_PATH)/configs/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml
+    $(COMMON_PATH)/configs/audio/mixer_paths_skuk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_skuk.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
@@ -171,7 +164,8 @@ PRODUCT_PACKAGES += \
 # DAC
 PRODUCT_PACKAGES += \
     QuadDACPanel \
-    vendor.lge.hardware.audio.dac.control@1.0-service
+    audio_amplifier.hifi_dac \
+    vendor.lge.hardware.audio.dac.control@2.0-service
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)

@@ -32,50 +32,24 @@ vendor/lib/hw/com.dsi.ant@1.0-impl.so
 vendor/lib64/com.dsi.ant@1.0.so
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
-# Audio primary - from flashlmdd_lao_com - SKQ1.211103.001
-vendor/lib/hw/audio.primary.msmnile.so:vendor/lib/hw/audio.primary.sdm845.so|5c5d0432a66e076d0cd9587503ea045ed204ca0f
-vendor/lib64/hw/audio.primary.msmnile.so:vendor/lib64/hw/audio.primary.sdm845.so|1a5f013bc0f7900415acc51d4e0437fc27f29755
-
 # Audio
-vendor/lib/btaudio_offload_if.so
-vendor/lib/liba2dpoffload.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
-vendor/lib/libadm.so
-vendor/lib/libaise_core.so
 vendor/lib/libaudcal.so
-vendor/lib/libaudioconfigstore.so
-vendor/lib/libaudio_log_utils.so
-vendor/lib/libaudioalsa.so
 vendor/lib/libaudioparsers.so
-vendor/lib/libbatterylistener.so
-vendor/lib/libcomprcapture.so
+vendor/lib/libcsd-client.so
 vendor/lib/libdrc.so
-vendor/lib/libexthwplugin.so
 vendor/lib/libqtigef.so
-vendor/lib/libsndmonitor.so
-vendor/lib/libspkrprot.so
-vendor/lib/libsurround_3mic_proc.so
-vendor/lib64/btaudio_offload_if.so
-vendor/lib64/liba2dpoffload.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
-vendor/lib64/libaise_core.so
 vendor/lib64/libaudcal.so
-vendor/lib64/libaudioconfigstore.so
-vendor/lib64/libaudio_log_utils.so
-vendor/lib64/libaudioalsa.so
 vendor/lib64/libaudioparsers.so
-vendor/lib64/libbatterylistener.so
-vendor/lib64/libcomprcapture.so
-vendor/lib64/libexthwplugin.so
+vendor/lib64/libcsd-client.so
 vendor/lib64/libqtigef.so
-vendor/lib64/libsndmonitor.so
-vendor/lib64/libspkrprot.so
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -480,12 +454,6 @@ vendor/lib64/libhbtpclient.so
 vendor/lib64/libhbtpdsp.so
 vendor/lib64/libhbtpfrmwk.so
 
-# Hotword Enrollment
--product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WCD9340/HotwordEnrollmentOKGoogleHEXAGON_WCD9340.apk;PRESIGNED
--product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WCD9340/HotwordEnrollmentXGoogleHEXAGON_WCD9340.apk;PRESIGNED
-system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
-system_ext/framework/com.android.hotwordenrollment.common.util.jar
-
 # Input
 vendor/etc/excluded-input-devices.xml
 
@@ -509,7 +477,6 @@ vendor/lib64/vendor.qti.latency@2.0.so
 vendor/lib64/vendor.qti.latency@2.1.so
 
 # Listen
-vendor/lib/hw/sound_trigger.primary.sdm845.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libcapiv2svacnn.so
 vendor/lib/libcapiv2vop.so
@@ -520,7 +487,6 @@ vendor/lib/libgcs.so
 vendor/lib/libmulawdec.so
 vendor/lib/libsmwrapper.so
 vendor/lib/libjnihelper.so
-vendor/lib64/hw/sound_trigger.primary.sdm845.so
 vendor/lib64/libcapiv2svacnn.so
 vendor/lib64/libcapiv2vop.so
 vendor/lib64/libgcs-calwrapper.so
