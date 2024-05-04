@@ -2,9 +2,6 @@
 # vendor props for lge sdm845-common
 #
 
-# APEX
-ro.apex.updatable=true
-
 # Audio
 af.fast_track_multiplier=1
 ro.af.client_heap_size_kbyte=7168
