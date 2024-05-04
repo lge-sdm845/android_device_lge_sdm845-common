@@ -154,6 +154,11 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
     vendor.qti.hardware.camera.device@1.0
 
+# Cgroup and task profiles
+PRODUCT_COPY_FILES += \
+    system/core/libprocessgroup/profiles/cgroups_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    system/core/libprocessgroup/profiles/task_profiles_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+
 # Context Hub
 PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0-impl.generic \
