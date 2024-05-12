@@ -282,7 +282,6 @@ PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libcodec2_hidl@1.0.vendor \
     libcodec2_vndk.vendor \
-    libmm-omxcore \
     libstagefright_softomx.vendor \
     libstagefrighthw
 
