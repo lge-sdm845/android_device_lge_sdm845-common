@@ -159,7 +159,8 @@ PRODUCT_PACKAGES += \
 
 # ConfigStore
 PRODUCT_PACKAGES += \
-    disable_configstore
+    disable_configstore \
+    vendor.qti.hardware.capabilityconfigstore@1.0.vendor
 
 # DAC
 PRODUCT_PACKAGES += \
