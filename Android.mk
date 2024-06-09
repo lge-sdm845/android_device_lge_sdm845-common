@@ -242,21 +242,6 @@ $(IPA_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(IPA_SYMLINKS)
 # END IPA Images
 
-# WIDEVINE Images
-WIDEVINE_IMAGES := \
-    widevine.b00 widevine.b01 widevine.b02 widevine.b03 widevine.b04 \
-    widevine.b05 widevine.b06 widevine.b07 widevine.mdt
-
-WIDEVINE_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(WIDEVINE_IMAGES)))
-$(WIDEVINE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "WIDEVINE firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /mnt/vendor/persist-lg/firmware/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(WIDEVINE_SYMLINKS)
-# END WIDEVINE Images
-
 # Wifi
 BDWLAN_IMAGES := \
     bdwlan.bin bdwlan_ch0.bin bdwlan_ch1.bin
