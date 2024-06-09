@@ -536,7 +536,6 @@ vendor/lib/libOmxWmaDec.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libmulawdec.so
 vendor/lib/libswvdec.so
-vendor/lib/libvorbisidec.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
 vendor/lib64/libFlacSwDec.so
