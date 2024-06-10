@@ -17,6 +17,15 @@ ro.charger.enable_suspend=true
 # CoreSight STM
 persist.debug.coresight.config=stm-events
 
+# Dalvik
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heapgrowthlimit=128m
+dalvik.vm.heapsize=384m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=6m
+dalvik.vm.heapmaxfree=12m
+dalvik.vm.madvise-random=true
+
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
 
