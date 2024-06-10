@@ -153,6 +153,11 @@ drm.service.enabled=true
 # Factory reset partition
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
+# IMS
+persist.vendor.ims.disableADBLogs=1
+persist.vendor.ims.disableDebugLogs=1
+persist.vendor.ims.disableIMSLogs=1
+
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
