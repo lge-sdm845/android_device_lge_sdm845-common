@@ -36,6 +36,7 @@ vendor.audio.tunnel.encode=false
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 vendor.voice.path.for.pcm.voip=false
+ro.hardware.audio_amplifier=lge
 
 # Audio - DAC
 persist.vendor.lge.audio.handset_rx_type=DEFAULT
@@ -49,7 +50,6 @@ vendor.lge.audio.hifi_rec.concert_gain=-140
 vendor.lge.audio.hifi_rec.concert_lcf=0
 vendor.lge.audio.hifi_rec.concert_lmt=0
 vendor.lge.audio.hifi_rec.offset_gain=39
-ro.hardware.audio_amplifier=hifi_dac
 
 # Audio - Features
 vendor.audio.feature.a2dp_offload.enable=true

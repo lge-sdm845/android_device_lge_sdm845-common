@@ -84,6 +84,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.bluetooth.audio-impl \
     audio.primary.sdm845 \
+    audio_amplifier.lge \
     liba2dpoffload \
     libbatterylistener \
     libcomprcapture \
@@ -165,7 +166,6 @@ PRODUCT_PACKAGES += \
 # DAC
 PRODUCT_PACKAGES += \
     QuadDACPanel \
-    audio_amplifier.hifi_dac \
     vendor.lge.hardware.audio.dac.control@2.0-service
 
 # Dalvik
