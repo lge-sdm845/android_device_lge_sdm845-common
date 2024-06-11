@@ -291,6 +291,10 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0 \
     android.hardware.keymaster@3.0.vendor
 
+# Light
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.lge
+
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service.lge
