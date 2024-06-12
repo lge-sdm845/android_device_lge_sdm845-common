@@ -47,7 +47,6 @@ PRODUCT_PACKAGES += \
 # A/B support
 PRODUCT_PACKAGES += \
     otapreopt_script \
-    cppreopts.sh \
     update_engine \
     update_verifier
 
@@ -64,13 +63,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
-PRODUCT_PACKAGES += \
-    update_engine_sideload
-
 # The following modules are included in debuggable builds only.
 PRODUCT_PACKAGES_DEBUG += \
-    bootctl \
-    update_engine_client
+    update_engine_client \
+    update_engine_sideload
 
 # Audio
 PRODUCT_PACKAGES += \
