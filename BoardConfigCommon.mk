@@ -63,7 +63,9 @@ USE_CUSTOM_AUDIO_POLICY := 1
 
 # Audio - LGE
 BOARD_LGE_HAS_EXT_AMPLIFIER := true
+ifneq ($(filter judypn judyln judyp,$(shell echo $(TARGET_PRODUCT) | sed 's/^lineage_//')),)
 BOARD_LGE_HAS_HIFI_QUAD_DAC := true
+endif
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH_QCOM := true
