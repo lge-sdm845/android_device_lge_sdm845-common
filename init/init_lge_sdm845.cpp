@@ -120,6 +120,7 @@ void init_target_properties() {
             if(pieces[0].compare("ro.vendor.lge.build.target_region") == 0 ||
                pieces[0].compare("ro.vendor.lge.build.target_operator") == 0 ||
                pieces[0].compare("ro.vendor.lge.build.target_country") == 0 ||
+               pieces[0].compare("ro.vendor.lge.capp_cupss.rootdir") == 0 ||
                pieces[0].compare("telephony.lteOnCdmaDevice") == 0 ||
                pieces[0].compare("persist.vendor.lge.audio.voice.clarity") == 0)
             {
