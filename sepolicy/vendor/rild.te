@@ -1,1 +1,4 @@
 get_prop(rild, vendor_lge_misc_prop)
+
+allow rild hal_lgdata_hwservice:hwservice_manager find;
+binder_call(rild, hal_lgdata_hwservice)
