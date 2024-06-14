@@ -70,3 +70,7 @@ persist.vendor.lge.service.kernel.enable            u:object_r:vendor_qni_prop:s
 persist.data_netmgrd_mtu                            u:object_r:vendor_radio_prop:s0
 vendor.lge.data.net.iwlan.                          u:object_r:vendor_radio_prop:s0
 vendor.lge.ril.                                     u:object_r:vendor_radio_prop:s0
+
+# USB
+ro.vendor.lge.usb.                                  u:object_r:vendor_lge_usb_prop:s0
+vendor.lge.usb.                                     u:object_r:vendor_lge_usb_prop:s0
