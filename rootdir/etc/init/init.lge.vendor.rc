@@ -71,9 +71,6 @@ on post-fs-data
     chmod 0660 /sys/devices/virtual/input/lge_touch/sp_link_touch_off
     chown system system /sys/devices/virtual/input/lge_touch/sp_link_touch_off
 
-    # NTCODE_LISTING
-    mkdir /data/app-system 0771 system system
-
     # LGP_DATA_APN_BACKUP
     mkdir /mnt/vendor/persist-lg/lgdata 0775 radio radio
 
