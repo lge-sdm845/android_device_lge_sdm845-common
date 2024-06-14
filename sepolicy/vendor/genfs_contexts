@@ -6,6 +6,9 @@ genfscon sysfs /devices/platform/soc/a90000.i2c/i2c-4/4-0061/power_supply/wirele
 # Devices
 genfscon proc /bus/input/devices                                                u:object_r:proc_devices:s0
 
+# Input
+genfscon sysfs /devices/virtual/input/input6/ldaf_thread_pause                  u:object_r:sysfs_lge_camera:s0
+
 # kgsl
 genfscon sysfs /class/kgsl                                                      u:object_r:sysfs_kgsl:s0
 
