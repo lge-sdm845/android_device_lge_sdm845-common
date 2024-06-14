@@ -6,3 +6,5 @@ allow ueventd persist_lg_wlan_file:file r_file_perms;
 allow ueventd metadata_file:dir search;
 
 allow ueventd ueventd:capability sys_nice;
+
+allow ueventd persist_lg_data_file:file r_file_perms;
