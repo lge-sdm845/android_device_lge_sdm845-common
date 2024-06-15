@@ -18,6 +18,7 @@ set_prop(vendor_init, vendor_lge_usb_prop)
 set_prop(vendor_init, vendor_qni_prop)
 set_prop(vendor_init, vendor_sensors_prop)
 set_prop(vendor_init, vendor_ssr_prop)
+set_prop(vendor_init, qcom_ims_prop)
 set_prop(vendor_init, media_settings_prop)
 
 allow vendor_init persdata_block_device:dir relabelto;
