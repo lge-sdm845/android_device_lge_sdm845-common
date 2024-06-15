@@ -201,9 +201,6 @@ persist.vendor.ssr.restart_level=ALL_ENABLE
 # USB
 persist.sys.usb.config.extra=none
 
-# Voice assistant
-ro.opa.eligible_device=true
-
 # Volume
 ro.config.vc_call_vol_steps=7
 
