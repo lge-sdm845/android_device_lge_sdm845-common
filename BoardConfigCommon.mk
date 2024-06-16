@@ -167,6 +167,9 @@ include device/lineage/sepolicy/libperfmgr/sepolicy.mk
 # Treble
 BOARD_VNDK_VERSION := current
 
+# Vendor Security Patch level
+VENDOR_SECURITY_PATCH := 2023-05-01
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
