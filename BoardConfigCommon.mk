@@ -26,6 +26,11 @@ AB_OTA_PARTITIONS += \
     vbmeta \
     dtbo
 
+ifneq ($(BOARD_SUPER_PARTITION_SIZE),)
+AB_OTA_PARTITIONS += \
+    product
+endif
+
 # Platform
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a
@@ -142,6 +147,15 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 
 ifneq ($(BOARD_SUPER_PARTITION_SIZE),)
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
+
+# Partitions - Dynamic
+include vendor/lineage/config/BoardConfigReservedSize.mk
+BOARD_LGE_DYNAMIC_PARTITIONS_PARTITION_LIST := product system vendor
+BOARD_LGE_DYNAMIC_PARTITIONS_SIZE := 10735321088
+BOARD_SUPER_PARTITION_GROUPS := lge_dynamic_partitions
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 else
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4756340736
 endif
@@ -173,6 +187,9 @@ include device/lineage/sepolicy/libperfmgr/sepolicy.mk
 # Treble
 BOARD_VNDK_VERSION := current
 TARGET_COPY_OUT_VENDOR := vendor
+ifneq ($(BOARD_SUPER_PARTITION_SIZE),)
+TARGET_COPY_OUT_PRODUCT := product
+endif
 
 # Vendor Security Patch level
 VENDOR_SECURITY_PATCH := 2023-05-01
