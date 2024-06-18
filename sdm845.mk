@@ -142,7 +142,9 @@ TARGET_SCREEN_WIDTH := 1440
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
-    vendor.qti.hardware.camera.device@1.0
+    vendor.qti.hardware.camera.device@1.0 \
+    libpng.vendor:32 \
+    libunwindstack.vendor:32
 
 # Cgroup and task profiles
 PRODUCT_COPY_FILES += \
@@ -290,6 +292,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0 \
     android.hardware.keymaster@3.0.vendor
+
+# libion
+PRODUCT_PACKAGES += \
+    libion.vendor
 
 # Light
 PRODUCT_PACKAGES += \
@@ -439,7 +445,8 @@ PRODUCT_PACKAGES += \
     android.system.net.netd@1.1 \
     android.system.net.netd@1.1.vendor \
     librmnetctl \
-    libxml2
+    libxml2 \
+    libsqlite.vendor:64
 
 # Recovery
 PRODUCT_COPY_FILES += \
@@ -505,6 +512,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
+    libnetutils.vendor \
     libwifi-hal-qcom \
     libwpa_client \
     WifiOverlay \
