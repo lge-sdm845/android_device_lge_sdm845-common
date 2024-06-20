@@ -873,11 +873,9 @@ vendor/lib64/vendor.qti.hardware.soter@1.0.so
 # SoundFX
 system_ext/etc/permissions/audiosphere.xml
 system_ext/framework/audiosphere.jar
-vendor/lib/soundfx/libaisound.so
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/liblgeffectwrapper.so
 vendor/lib/soundfx/libshoebox.so
-vendor/lib64/soundfx/libaisound.so
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/liblgeffectwrapper.so
 vendor/lib64/soundfx/libshoebox.so
