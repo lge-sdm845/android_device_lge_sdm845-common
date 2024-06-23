@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
+
 # Common device tree path
 COMMON_PATH := device/lge/sdm845-common
 
