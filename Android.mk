@@ -103,21 +103,6 @@ $(HDCPSRM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(HDCPSRM_SYMLINKS)
 # END HDCPSRM Images
 
-# IPA Images
-IPA_IMAGES := \
-    ipa_fws.b00 ipa_fws.b01 ipa_fws.b02 ipa_fws.b03 ipa_fws.b04 \
-    ipa_fws.elf ipa_fws.mdt
-
-IPA_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(IPA_IMAGES)))
-$(IPA_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "IPA firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /vendor/firmware_mnt/image/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(IPA_SYMLINKS)
-# END IPA Images
-
 # Wifi
 BDWLAN_IMAGES := \
     bdwlan.bin bdwlan_ch0.bin bdwlan_ch1.bin
