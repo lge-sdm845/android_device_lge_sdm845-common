@@ -62,36 +62,6 @@ $(CPP64_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(CPP32_SYMLINKS) $(CPP64_SYMLINKS)
 # END libc++_shared
 
-# CPPF Images
-CPPF_IMAGES := \
-    cppf.b00 cppf.b01 cppf.b02 cppf.b03 cppf.b04 \
-    cppf.b05 cppf.b06 cppf.b07 cppf.mdt
-
-CPPF_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(CPPF_IMAGES)))
-$(CPPF_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "CPPF firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /mnt/vendor/persist-lg/firmware/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(CPPF_SYMLINKS)
-# END CPPF Images
-
-# HDCPSRM Images
-HDCPSRM_IMAGES := \
-    hdcpsrm.b00 hdcpsrm.b01 hdcpsrm.b02 hdcpsrm.b03 hdcpsrm.b04 \
-    hdcpsrm.b05 hdcpsrm.b06 hdcpsrm.b07 hdcpsrm.mdt
-
-HDCPSRM_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(HDCPSRM_IMAGES)))
-$(HDCPSRM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "HDCPSRM firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /mnt/vendor/persist-lg/firmware/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(HDCPSRM_SYMLINKS)
-# END HDCPSRM Images
-
 # Wifi
 BDWLAN_IMAGES := \
     bdwlan.bin bdwlan_ch0.bin bdwlan_ch1.bin
