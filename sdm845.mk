@@ -152,15 +152,13 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \
     android.hardware.graphics.mapper@2.0-impl-qti-display \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
     gralloc.sdm845 \
     hwcomposer.sdm845 \
-    memtrack.sdm845 \
     vendor.qti.hardware.display.allocator@1.0-service \
     vendor.qti.hardware.display.config-V5-ndk \
     vendor.qti.hardware.display.mapper@3.0.vendor \
-    vendor.qti.hardware.display.mapperextensions@1.0.vendor
+    vendor.qti.hardware.display.mapperextensions@1.0.vendor \
+    vendor.qti.hardware.memtrack-service
 
 # Doze
 PRODUCT_PACKAGES += \
