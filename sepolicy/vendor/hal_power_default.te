@@ -2,3 +2,6 @@ allow hal_power_default sysfs_lge_touch:dir search;
 allow hal_power_default sysfs_lge_touch:file w_file_perms;
 
 allow hal_power_default device_latency:chr_file { open write };
+
+# Allow hal_power_default to enable/disable sched_boost
+allow hal_power_default proc:file rw_file_perms;
