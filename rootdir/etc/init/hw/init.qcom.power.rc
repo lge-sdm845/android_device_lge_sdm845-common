@@ -246,5 +246,8 @@ on enable-low-power
 on property:sys.boot_completed=1
     trigger enable-low-power
 
+    # Turn off scheduler boost at the end
+    write /proc/sys/kernel/sched_boost 0
+
 on property:init.svc.recovery=running
     trigger enable-low-power
