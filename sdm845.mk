@@ -95,7 +95,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.2-impl \
-    sound_trigger.primary.sdm845 \
+    sound_trigger.primary.sdm845
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
@@ -113,18 +113,7 @@ PRODUCT_COPY_FILES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    AntHalService-Soong \
-    com.dsi.ant@1.0.vendor
-
-# Bluetooth
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0 \
-    android.hardware.bluetooth@1.0.vendor \
-    android.hardware.bluetooth.a2dp@1.0.vendor \
-    liba2dpoffload \
-    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
-    vendor.qti.hardware.btconfigstore@1.0.vendor \
-    vendor.qti.hardware.btconfigstore@2.0.vendor
+    AntHalService-Soong
 
 # Boot animation
 TARGET_BOOTANIMATION_HALF_RES := true
@@ -135,9 +124,7 @@ TARGET_SCREEN_WIDTH := 1440
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
-    vendor.qti.hardware.camera.device@1.0 \
-    libpng.vendor:32 \
-    libunwindstack.vendor:32
+    vendor.qti.hardware.camera.device@1.0
 
 # Cgroup and task profiles
 PRODUCT_COPY_FILES += \
@@ -151,8 +138,7 @@ PRODUCT_PACKAGES += \
 
 # ConfigStore
 PRODUCT_PACKAGES += \
-    disable_configstore \
-    vendor.qti.hardware.capabilityconfigstore@1.0.vendor
+    disable_configstore
 
 # DAC
 PRODUCT_PACKAGES += \
@@ -170,14 +156,7 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     gralloc.sdm845 \
     hwcomposer.sdm845 \
-    libdisplayconfig.qti \
-    libdisplayconfig.system.qti \
-    libqdMetaData \
-    libqdMetaData.system \
-    libtinyxml \
     memtrack.sdm845 \
-    vendor.display.config@1.0.vendor \
-    vendor.display.config@2.0 \
     vendor.qti.hardware.display.allocator@1.0-service \
     vendor.qti.hardware.display.config-V5-ndk \
     vendor.qti.hardware.display.mapper@3.0.vendor \
@@ -189,8 +168,6 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4 \
-    android.hardware.drm@1.4.vendor \
     android.hardware.drm-service.clearkey
 
 # Fastbootd
@@ -209,18 +186,7 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0 \
-    android.hardware.gatekeeper@1.0.vendor
-
 # GPS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.1 \
-    android.hardware.gnss@1.1.vendor \
-    android.hardware.gnss@2.1 \
-    android.hardware.gnss@2.1.vendor
-
 PRODUCT_PACKAGES += \
     flp.conf \
     gps.conf \
@@ -234,19 +200,6 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service
-
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.base@1.0.vendor \
-    android.hidl.manager@1.0 \
-    android.hidl.manager@1.0.vendor \
-    android.hidl.allocator@1.0 \
-    android.hidl.allocator@1.0.vendor \
-    libhidltransport \
-    libhidltransport.vendor \
-    libhwbinder \
-    libhwbinder.vendor
 
 # Hotword Enrollement
 PRODUCT_COPY_FILES += \
@@ -281,15 +234,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl
 
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0 \
-    android.hardware.keymaster@3.0.vendor
-
-# libion
-PRODUCT_PACKAGES += \
-    libion.vendor
-
 # Light
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lge
@@ -316,15 +260,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml
 
-# Neural Networks
-PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.3 \
-    android.hardware.neuralnetworks@1.3.vendor
-
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service \
-    android.hardware.secure_element@1.2.vendor \
     com.android.nfc_extras \
     NfcNci \
     SecureElement \
@@ -348,8 +286,6 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libavservices_minijail \
-    libavservices_minijail.vendor \
     libc2dcolorconvert \
     libcodec2_hidl@1.0.vendor \
     libcodec2_vndk.vendor \
@@ -405,15 +341,9 @@ PRODUCT_COPY_FILES += \
 
 # Protobuf
 PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-vendorcompat \
     libprotobuf-cpp-lite-vendorcompat
 
 # QMI
-PRODUCT_PACKAGES += \
-    libjson \
-    libqti_vndfwk_detect \
-    libqti_vndfwk_detect.vendor
-
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/qmi_fw.conf:$(TARGET_COPY_OUT_VENDOR)/etc/qmi_fw.conf
 
@@ -423,17 +353,6 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/permissions/privapp-permissions-lge_sdm845.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lge_sdm845.xml \
     $(COMMON_PATH)/configs/permissions/telephony_product_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/telephony_product_privapp-permissions-qti.xml \
     $(COMMON_PATH)/configs/permissions/telephony_system-ext_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
-
-# RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.5.vendor \
-    android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    android.system.net.netd@1.1 \
-    android.system.net.netd@1.1.vendor \
-    librmnetctl \
-    libxml2 \
-    libsqlite.vendor:64
 
 # Recovery
 PRODUCT_COPY_FILES += \
@@ -447,9 +366,7 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service \
-    android.frameworks.sensorservice@1.0 \
-    android.frameworks.sensorservice@1.0.vendor
+    android.hardware.sensors@1.0-service
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
@@ -483,10 +400,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.3-service.dual_role_usb
 
-# Vendor libstdc++
-PRODUCT_PACKAGES += \
-    libstdc++_vendor
-
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.lge
@@ -494,16 +407,10 @@ PRODUCT_PACKAGES += \
 # Vintf
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := true
 
-# VNDK
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-3.9.1-vendorcompat \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat
-
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
-    libnetutils.vendor \
     libwifi-hal-qcom \
     libwpa_client \
     WifiOverlay \
