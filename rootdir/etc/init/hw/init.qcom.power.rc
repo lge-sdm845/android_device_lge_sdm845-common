@@ -29,36 +29,141 @@ on enable-low-power
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
 
-on property:sys.boot_completed=1
-    trigger enable-low-power
+    # Set the default IRQ affinity to the silver cluster.
+    # When a CPU is isolated/hotplugged, the IRQ affinity is adjusted
+    # to one of the CPU from the default IRQ affinity mask.
+    write /proc/irq/default_smp_affinity "f"
 
-    # Runtime fs tuning
+    # Core control parameters
+    write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 2
+    write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 60
+    write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 30
+    write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 100
+    write /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster 1
+    write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 4
+
+    # Setting b.L scheduler parameters
+    write /proc/sys/kernel/sched_upmigrate 95
+    write /proc/sys/kernel/sched_downmigrate 85
+    write /proc/sys/kernel/sched_group_upmigrate 100
+    write /proc/sys/kernel/sched_group_downmigrate 95
+    write /proc/sys/kernel/sched_walt_rotate_big_tasks 1
+
+    # Configure governor settings for little cluster
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/rate_limit_us 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq 1228800
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/pl 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 576000
+
+    # Configure governor settings for big cluster
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/rate_limit_us 0
+    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/hispeed_freq 1536000
+    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/pl 1
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 120
+
+    # Limit the min frequency to 825MHz
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 825000
+
+    # Enable oom_reaper
+    write /sys/module/lowmemorykiller/parameters/oom_reaper 1
+
+    # Enable bus-dcvs
+    write /sys/class/devfreq/soc:qcom,cpubw/governor "bw_hwmon"
+    write /sys/class/devfreq/soc:qcom,cpubw/polling_interval 50
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/mbps_zones "2288 4577 6500 8132 9155 10681"
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/sample_ms 4
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/io_percent 50
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory 20
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length 10
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/guard_band_mbps 0
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/up_scale 250
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/idle_mbps 1600
+
+    write /sys/class/devfreq/soc:qcom,llccbw/governor "bw_hwmon"
+    write /sys/class/devfreq/soc:qcom,llccbw/polling_interval 50
+    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/mbps_zones "1720 2929 3879 5931 6881"
+    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/sample_ms 4
+    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/io_percent 80
+    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/hist_memory 20
+    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/hyst_length 10
+    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/guard_band_mbps 0
+    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/up_scale 250
+    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/idle_mbps 1600
+
+    # Enable mem_latency governor for DDR scaling
+    write /sys/class/devfreq/soc:qcom,memlat-cpu0/governor "mem_latency"
+    write /sys/class/devfreq/soc:qcom,memlat-cpu0/polling_interval 10
+    write /sys/class/devfreq/soc:qcom,memlat-cpu0/mem_latency/ratio_ceil 400
+
+    write /sys/class/devfreq/soc:qcom,memlat-cpu4/governor "mem_latency"
+    write /sys/class/devfreq/soc:qcom,memlat-cpu4/polling_interval 10
+    write /sys/class/devfreq/soc:qcom,memlat-cpu4/mem_latency/ratio_ceil 400
+
+    # Enable mem_latency governor for L3 scaling
+    write /sys/class/devfreq/soc:qcom,l3-cpu0/governor "mem_latency"
+    write /sys/class/devfreq/soc:qcom,l3-cpu0/polling_interval 10
+    write /sys/class/devfreq/soc:qcom,l3-cpu0/mem_latency/ratio_ceil 400
+
+    write /sys/class/devfreq/soc:qcom,l3-cpu4/governor "mem_latency"
+    write /sys/class/devfreq/soc:qcom,l3-cpu4/polling_interval 10
+    write /sys/class/devfreq/soc:qcom,l3-cpu4/mem_latency/ratio_ceil 400
+
+    # Enable userspace governor for L3 cdsp nodes
+    write /sys/class/devfreq/soc:qcom,l3-cdsp/governor "userspace"
+    chown system /sys/class/devfreq/soc:qcom,l3-cdsp/userspace/set_freq
+
+    # Gold L3 ratio ceil
+    write /sys/class/devfreq/soc:qcom,l3-cpu4/mem_latency/ratio_ceil 4000
+
+    write /sys/class/devfreq/soc:qcom,mincpubw/governor "compute"
+    write /sys/class/devfreq/soc:qcom,mincpubw/polling_interval 10
+
+    # Runtime FS tuning: as we have init boottime setting and kernel patch setting
+    # default readahead to 2048KB. We should adjust the setting upon boot_complete
+    # for runtime performance
+    write /sys/block/sda/queue/read_ahead_kb 128
     write /sys/block/sda/queue/nr_requests 128
     write /sys/block/sda/queue/iostats 1
+    write /sys/block/sdf/queue/read_ahead_kb 128
+    write /sys/block/sdf/queue/nr_requests 128
+    write /sys/block/sdf/queue/iostats 1
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/dm-1/queue/read_ahead_kb 128
+    write /sys/block/dm-2/queue/read_ahead_kb 128
+    write /sys/block/dm-3/queue/read_ahead_kb 128
 
-    # Block layer tuning: discard chunk size up to 128MB
-    # Otherwise, contiguous discards can be merged
-    write /sys/block/sda/queue/discard_max_bytes 134217728
+    # cpuset parameters
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
 
-    # Back to default VM settings
-    write /proc/sys/vm/dirty_expire_centisecs 3000
-    write /proc/sys/vm/dirty_background_ratio 10
+    # Turn off scheduler boost at the end
+    write /proc/sys/kernel/sched_boost 0
 
-    # Setup runtime cpusets
-    write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-2,4-5
-    write /dev/cpuset/background/cpus 0-2
-    write /dev/cpuset/system-background/cpus 0-2,5-6
-    write /dev/cpuset/restricted/cpus 0-3
+    # Disable CPU Retention
+    write /sys/module/lpm_levels/L3/cpu0/ret/idle_enabled "N"
+    write /sys/module/lpm_levels/L3/cpu1/ret/idle_enabled "N"
+    write /sys/module/lpm_levels/L3/cpu2/ret/idle_enabled "N"
+    write /sys/module/lpm_levels/L3/cpu3/ret/idle_enabled "N"
+    write /sys/module/lpm_levels/L3/cpu4/ret/idle_enabled "N"
+    write /sys/module/lpm_levels/L3/cpu5/ret/idle_enabled "N"
+    write /sys/module/lpm_levels/L3/cpu6/ret/idle_enabled "N"
+    write /sys/module/lpm_levels/L3/cpu7/ret/idle_enabled "N"
+    write /sys/module/lpm_levels/L3/l3-dyn-ret/idle_enabled "N"
 
-    # Setup runtime blkio
-    # value for group_idle is us
-    write /dev/blkio/blkio.weight 1000
-    write /dev/blkio/background/blkio.weight 200
-    write /dev/blkio/blkio.group_idle 2000
-    write /dev/blkio/background/blkio.group_idle 0
+    # Turn on sleep modes
+    write /sys/module/lpm_levels/parameters/sleep_disabled 0
+    write /proc/sys/vm/swappiness 100
+    write /proc/sys/vm/watermark_scale_factor 120
+
+    # Post-setup services
+    setprop vendor.post_boot.parsed 1
 
 on early-init
+    write /proc/sys/kernel/sched_boost 1
+
     # configure governor settings
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 500
@@ -75,6 +180,30 @@ on early-init
     write /sys/devices/system/cpu/cpu7/cpufreq/schedutil/down_rate_limit_us 20000
 
 on init
+    # Boot time FS tune
+    write /sys/block/sda/queue/iostats 0
+    write /sys/block/sda/queue/scheduler cfq
+    write /sys/block/sda/queue/iosched/slice_idle 0
+    write /sys/block/sda/queue/read_ahead_kb 2048
+    write /sys/block/sda/queue/nr_requests 256
+    write /sys/block/sdf/queue/iostats 0
+    write /sys/block/sdf/queue/scheduler cfq
+    write /sys/block/sdf/queue/iosched/slice_idle 0
+    write /sys/block/sdf/queue/read_ahead_kb 2048
+    write /sys/block/sdf/queue/nr_requests 256
+    write /sys/block/dm-0/queue/read_ahead_kb 2048
+    write /sys/block/dm-1/queue/read_ahead_kb 2048
+    write /sys/block/dm-2/queue/read_ahead_kb 2048
+
+    write /dev/stune/foreground/schedtune.sched_boost_no_override 1
+    write /dev/stune/top-app/schedtune.sched_boost_no_override 1
+    write /dev/stune/schedtune.colocate 0
+    write /dev/stune/background/schedtune.colocate 0
+    write /dev/stune/system-background/schedtune.colocate 0
+    write /dev/stune/foreground/schedtune.colocate 0
+    write /dev/stune/top-app/schedtune.colocate 1
+    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+
     # Boot time cpuset and stune
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-7
@@ -104,3 +233,70 @@ on init
     # report max frequency to unity tasks.
     write /proc/sys/kernel/sched_lib_name "UnityMain,libunity.so"
     write /proc/sys/kernel/sched_lib_mask_force 255
+
+on boot
+    # For cpusets initialize for Silver only first and then Silver + Gold
+    # Silver only configuration cannot work with 0-7
+    write /dev/cpuset/top-app/cpus 0-3
+    write /dev/cpuset/audio-app/cpus 1-2
+    write /dev/cpuset/foreground/cpus 0-3
+    write /dev/cpuset/foreground/boost/cpus 0-3
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/foreground/boost/cpus 0-7
+    write /dev/cpuset/background/cpus 0-7
+    write /dev/cpuset/system-background/cpus 0-7
+
+on late-fs
+    # Boot time FS tune
+    write /sys/block/dm-3/queue/read_ahead_kb 2048
+
+on property:sys.boot_completed=1
+    trigger enable-low-power
+
+    # Runtime fs tuning
+    write /sys/block/sda/queue/nr_requests 128
+    write /sys/block/sda/queue/iostats 1
+
+    # Block layer tuning: discard chunk size up to 128MB
+    # Otherwise, contiguous discards can be merged
+    write /sys/block/sda/queue/discard_max_bytes 134217728
+
+    # Back to default VM settings
+    write /proc/sys/vm/dirty_expire_centisecs 3000
+    write /proc/sys/vm/dirty_background_ratio 10
+
+    # Setup runtime cpusets
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-2,4-5
+    write /dev/cpuset/background/cpus 0-2
+    write /dev/cpuset/system-background/cpus 0-2,5-6
+    write /dev/cpuset/restricted/cpus 0-3
+
+    # Setup runtime blkio
+    # value for group_idle is us
+    write /dev/blkio/blkio.weight 1000
+    write /dev/blkio/background/blkio.weight 200
+    write /dev/blkio/blkio.group_idle 2000
+    write /dev/blkio/background/blkio.group_idle 0
+
+on charger
+    setprop persist.sys.usb.config mass_storage
+    start vendor.power_off_alarm
+    setprop sys.usb.configfs 1
+    trigger enable-low-power
+
+service vendor.power_off_alarm /vendor/bin/power_off_alarm
+    class core
+    group system
+    disabled
+    oneshot
+
+service thermal-engine /system/vendor/bin/thermal-engine
+   class main
+   user root
+   socket thermal-send-client stream 0666 system system
+   socket thermal-recv-client stream 0660 system system
+   socket thermal-recv-passive-client stream 0666 system system
+   socket thermal-send-rule stream 0660 system system
+   group root
