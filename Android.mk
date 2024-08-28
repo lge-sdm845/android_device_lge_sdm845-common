@@ -17,7 +17,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter judypn judyln g710n g710ulm judyp,$(TARGET_DEVICE)),)
+ifneq ($(filter caymanslm judypn judyln g710n g710ulm judyp style3lm,$(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
