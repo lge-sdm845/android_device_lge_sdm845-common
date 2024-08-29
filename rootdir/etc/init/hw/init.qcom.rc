@@ -88,10 +88,7 @@ on early-boot
     setrlimit 8 67108864 67108864
     # Allow subsystem (modem etc) debugging
     write /sys/kernel/boot_adsp/boot 1
-
-    # for boot time, move to init.qcom.devstart.sh
-    #write /sys/kernel/boot_cdsp/boot 1
-    exec_background u:r:lge_debug_vendor_shell:s0 -- /vendor/bin/init.qcom.devstart.sh
+    write /sys/kernel/boot_cdsp/boot 1
 
     write /sys/devices/virtual/npu/msm_npu/boot 1
     write /sys/devices/virtual/cvp/cvp/boot 1
