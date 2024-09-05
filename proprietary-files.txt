@@ -174,7 +174,6 @@ vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 
 # Crypto
 system_ext/lib/libbluedroid_bdt.so
-vendor/lib/libatd_modeminterface.so
 vendor/lib/libcpion.so
 vendor/lib/liblgehdcpek.so
 vendor/lib/liblgftmitem_vendor.so
@@ -182,7 +181,6 @@ vendor/lib/librmp.so
 vendor/lib/libunified_sysfs_vendor.so
 vendor/lib/vendor.lge.hardware.filehandle@1.0.so
 vendor/lib64/libcpion.so
-vendor/lib64/libfpfactory-impl.so
 vendor/lib64/libhdcpsrm.so
 vendor/lib64/liblgftmitem_vendor.so
 vendor/lib64/librmp.so
@@ -201,12 +199,6 @@ system_ext/etc/permissions/com.qti.dpmframework.xml
 system_ext/etc/permissions/dpmapi.xml
 system_ext/framework/com.qti.dpmframework.jar
 system_ext/framework/dpmapi.jar
-system_ext/lib/com.qualcomm.qti.dpm.api@1.0.so
-system_ext/lib/libdpmctmgr.so
-system_ext/lib/libdpmfdmgr.so
-system_ext/lib/libdpmframework.so
-system_ext/lib/libdpmtcm.so
-system_ext/lib/vendor.qti.diaghal@1.0.so
 system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so
 system_ext/lib64/libdpmctmgr.so
 system_ext/lib64/libdpmfdmgr.so
@@ -490,10 +482,6 @@ vendor/lib64/libjnihelper.so
 vendor/lib64/libmulawdec.so
 
 # Media
-system_ext/lib/libmmosal.so
-system_ext/lib/libmmparser_lite.so
-system_ext/lib64/libmmosal.so
-system_ext/lib64/libmmparser_lite.so
 vendor/etc/system_properties.xml
 vendor/lib64/libmmosal.so
 
@@ -547,12 +535,6 @@ vendor/lib/libperipheral_client.so
 vendor/lib/libspcom.so
 vendor/lib64/libperipheral_client.so
 vendor/lib64/libspcom.so
-
-# QDUtils
-system_ext/lib/vendor.qti.hardware.qdutils_disp@1.0.so
-system_ext/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
-vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
-vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
 # QMI
 vendor/bin/irsc_util
@@ -800,8 +782,6 @@ vendor/lib64/vendor.qti.imsrtpservice@3.0.so
 vendor/bin/hw/vendor.lge.hardware.lgdata@1.1-service
 vendor/etc/init/vendor.lge.hardware.lgdata@1.1-service.rc
 vendor/lib/LGDataFeature_vendor.so
-vendor/lib/lgdatavendorlib.so
-vendor/lib/lge_qcci_data.so
 vendor/lib64/LGDataFeature_vendor.so
 vendor/lib64/lgdatavendorlib.so
 vendor/lib64/lge_qcci_data.so
