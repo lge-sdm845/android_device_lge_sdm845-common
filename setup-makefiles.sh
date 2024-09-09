@@ -27,7 +27,7 @@ setup_vendor "${DEVICE_COMMON}" "${VENDOR_COMMON:-$VENDOR}" "${ANDROID_ROOT}" tr
 write_headers "judyp judypn judyln g710n g710ulm caymanslm style3lm"
 
 # The standard common blobs
-write_makefiles "${MY_DIR}/proprietary-files.txt" true
+write_makefiles "${MY_DIR}/proprietary-files.txt"
 
 # Finish
 write_footers
@@ -42,7 +42,7 @@ if [ -s "${MY_DIR}/../../${VENDOR_SPECIFIED_COMMON:-$VENDOR}/${DEVICE_SPECIFIED_
     write_headers "${DEVICE_SPECIFIED_COMMON_DEVICE}"
 
     # The standard device specified common blobs
-    write_makefiles "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" true
+    write_makefiles "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt"
 
     # Finish
     write_footers
@@ -59,7 +59,7 @@ if [ -s "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-files.txt" ]; then
     write_headers
 
     # The standard device blobs
-    write_makefiles "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-files.txt" true
+    write_makefiles "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-files.txt"
 
     if [ -f "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-firmware.txt" ]; then
         append_firmware_calls_to_makefiles "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-firmware.txt"
