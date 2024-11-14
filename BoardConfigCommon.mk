@@ -167,7 +167,6 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 include device/lineage/sepolicy/libperfmgr/sepolicy.mk
 
 # Treble
-BOARD_VNDK_VERSION := current
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Vendor Security Patch level
