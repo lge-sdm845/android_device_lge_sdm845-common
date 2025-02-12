@@ -173,9 +173,9 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
-ifneq ($(filter caymanslm judypn judyln,$(DEVICE_NAME)),)
+ifeq ($(filter judyp caymanslm,$(DEVICE_NAME)),)
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.lge
+    android.hardware.biometrics.fingerprint-service.lineage
 endif
 
 # FM packages
